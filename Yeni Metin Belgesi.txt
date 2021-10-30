@@ -1,0 +1,188 @@
+function TimeConvert(num) { 
+
+  // code goes here  
+  if(num >60){
+      let dakika = 0;let saat = 0;
+      dakika = num%60;
+      saat = parseInt(num/60);
+
+      return saat+':'+dakika
+  }else{
+    return '0:'+num
+  }
+  console.log(num)
+  return num; 
+
+}
+   
+// keep this function call here 
+console.log(TimeConvert(readline()));
+
+
+-----------------------------------------------------
+
+
+const _ = require('lodash');
+function TwoSum(arr) { 
+
+  let ilk = parseInt(arr[0]);
+  
+  let temp = {}; temp2 = {};
+  _.map(arr,(v,k)=>{
+    
+    if(k>0){
+  
+
+      _.map(arr,(val,key)=>{
+        if(k>0){
+        if(ilk == v+val){
+          
+          if(!temp[val]){
+            temp2[k]=[v,val];
+            temp[v]=val;
+         
+          }
+         
+          
+        }
+        }
+
+      })
+
+    
+    }
+
+
+  });
+
+  let str = '';
+  _.map(temp2,(v,k)=>{
+    str += v[0]+','+v[1]+' '
+  });
+
+  
+  // code goes here  
+  return str; 
+
+}
+   
+// keep this function call here 
+console.log(TwoSum(readline()));
+
+
+------------------------------------------
+
+
+function StringChallenge(str) { 
+
+  // code goes here  
+  return str.replace(/[\W_]+/g,"_").toLowerCase(); 
+
+}
+   
+// keep this function call here 
+console.log(StringChallenge(readline()));
+
+
+-----------------------------------------------------------
+
+
+function StringChallenge(num) { 
+let saat = 0;let dakika = 0;
+
+if(num>60){
+saat = parseInt(num/60);
+dakika = num%60;
+if(saat<10){
+if(dakika<10){
+return saat+'1:e'+dakika+'s873pfda'
+}
+else{
+return saat+'1:e'+dakika.toString()[0]+'s'+dakika.toString()[1]+'873pfda'
+}
+}
+
+
+}
+else{
+  if(num<10){
+  return '01:e'+num+'s873pfda'
+  }else{
+     return '01:e'+num.toString()[0]+'s'+num.toString()[1]+'873pfda'
+  }
+
+}
+
+  // code goes here  
+  return num; 
+
+}
+   
+// keep this function call here 
+console.log(StringChallenge(readline()));
+
+-------------------------------------------------------
+
+
+
+const _ = require('lodash');
+function StringChallenge(str) { 
+  let data = 0;
+
+   let temp = tekrar(str);
+
+  while(
+    temp.includes('a')&& temp.includes('b') || 
+    temp.includes('a')&& temp.includes('c') || 
+    temp.includes('b')&& temp.includes('c') || 
+    temp.includes('a')&& temp.includes('b') && temp.includes('c')
+    ){
+       temp = tekrar(temp);
+    }
+
+  if(temp.length == 0){data = str.length;}
+  else{data = temp.length;}
+
+  // code goes here  
+  return data; 
+
+}
+   
+function tekrar(str){
+
+
+let t = '';let temp='';let son='';
+_.map(str,(v,k)=>{
+
+  if(t && k%2==1){
+
+    let valid = 'abc';
+    
+    if(t!=v){
+      temp += valid.replace(t,'').replace(v,'')
+    }
+    
+
+
+  }
+  t= v;
+
+  
+})
+
+if(str.length%2 == 1){
+temp += str[str.length-1];
+}
+
+return temp;
+}
+
+// keep this function call here 
+console.log(StringChallenge(readline()));
+
+------------------
+
+
+
+
+
